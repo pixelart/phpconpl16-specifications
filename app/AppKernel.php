@@ -14,6 +14,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Knp\Rad\FixturesLoad\Bundle\FixturesLoadBundle(),
+            new KPhoen\RulerZBundle\KPhoenRulerZBundle(),
             new AppBundle\AppBundle(),
         ];
 

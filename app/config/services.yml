@@ -4,6 +4,11 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    operator.array.age:
+        class: AppBundle\Spec\Operator\ArrayAgeOperator
+        tags:
+            - { name: rulerz.operator, executor: rulerz.executor.array, operator: age }
+    operator.doctrine.age:
+        class: AppBundle\Spec\Operator\DoctrineAgeOperator
+        tags:
+            - { name: rulerz.operator, executor: rulerz.executor.doctrine, operator: age, inline: true }
