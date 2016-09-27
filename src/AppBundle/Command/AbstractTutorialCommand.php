@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace AppBundle\Command;
 
+use AppBundle\Spec\Operator\ArrayAgeOperator;
 use RulerZ\Compiler\FileCompiler;
 use RulerZ\Compiler\Target;
 use RulerZ\Parser\HoaParser;
@@ -30,7 +31,9 @@ abstract class AbstractTutorialCommand extends ContainerAwareCommand
         return new RulerZ(
             $compiler, [
                 new Target\Sql\DoctrineQueryBuilderVisitor(),
-                new Target\ArrayVisitor(),
+                new Target\ArrayVisitor([
+                    'age' => new ArrayAgeOperator(),
+                ]),
             ]
         );
     }
