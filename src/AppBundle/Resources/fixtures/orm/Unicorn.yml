@@ -1,0 +1,10 @@
+AppBundle\Entity\Unicorn:
+    unicorn{1..500}:
+        name: <firstName()>
+        color: <safeColorName()>
+        birthDate: <dateTimeBetween('-70 years', 'now')>
+        hasLaserHorn: <boolean(55)>
+        poopsRainbows: <boolean(60)>
+        canFly: <boolean(70)>
+        fluffy: <boolean(80)>
+        herd: '@herd*'

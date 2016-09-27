@@ -1,0 +1,3 @@
+AppBundle\Entity\Herd:
+    herd{1..25}:
+        name (unique): <lastName()>
