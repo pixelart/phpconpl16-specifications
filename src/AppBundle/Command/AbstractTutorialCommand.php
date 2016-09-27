@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace AppBundle\Command;
 
 use AppBundle\Spec\Operator\ArrayAgeOperator;
+use AppBundle\Spec\Operator\DoctrineAgeOperator;
 use RulerZ\Compiler\FileCompiler;
 use RulerZ\Compiler\Target;
 use RulerZ\Parser\HoaParser;
@@ -28,9 +29,12 @@ abstract class AbstractTutorialCommand extends ContainerAwareCommand
         );
 
         // RulerZ engine
+        $doctrineVisitor = new Target\Sql\DoctrineQueryBuilderVisitor();
+        $doctrineVisitor->setInlineOperator('age', new DoctrineAgeOperator());
+
         return new RulerZ(
             $compiler, [
-                new Target\Sql\DoctrineQueryBuilderVisitor(),
+                $doctrineVisitor,
                 new Target\ArrayVisitor([
                     'age' => new ArrayAgeOperator(),
                 ]),
