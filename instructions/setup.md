@@ -32,7 +32,7 @@ On the first `composer install` you are asked for some parameters. For the
 `database_driver` you can either leave `pdo_mysql` and then fill out the
 user/password/name according to your local database setup.
  
-Or you can choose `sql_sqlite` as database driver then the database parameters
+Or you can choose `pdo_sqlite` as database driver then the database parameters
 can be left as they are. Only the `database_path` is relevant and should be left
 as it is.
 
