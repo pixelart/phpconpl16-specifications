@@ -7,7 +7,7 @@ Boot up your vagrant and ssh into it:
 
 ```bash
 vagrant ssh
-cd /vagrant/specifications/
+cd /vagrant/workshops/specifications/
 ```
 
 **VAGRANT END**
