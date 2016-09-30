@@ -1,0 +1,3 @@
+unicorn_search:
+    path: /
+    defaults: { _controller: 'AppBundle:Unicorn:search' }

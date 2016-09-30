@@ -6,8 +6,8 @@ namespace AppBundle\Spec\Operator;
 
 class ArrayAgeOperator
 {
-    public function __invoke(int $age): \DateTime
+    public function __invoke($age): \DateTime
     {
-        return new \DateTime('-'.$age.' years');
+        return new \DateTime('-'.(int) $age.' years');
     }
 }
